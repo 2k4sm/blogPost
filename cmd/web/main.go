@@ -15,9 +15,7 @@ func main() {
 
 	//app.Static("/static", "../../ui/html")
 
-	app.Get("/", homeHandler)
-
-	app.Get("/api/viewall", viewAll)
+	app.Get("/", viewAll)
 
 	app.Listen(":8000")
 

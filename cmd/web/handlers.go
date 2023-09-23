@@ -1,13 +1,21 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
+	"time"
 
 	"github.com/2k4sm/blogPost/internals/model"
 	"github.com/gofiber/fiber/v2"
 	"github.com/objectbox/objectbox-go/objectbox"
 )
+
+type Post struct {
+	Id          uint64
+	Title       string
+	Author      string
+	Description string
+	DateCreated time.Time
+}
 
 func initObjectBox() *objectbox.ObjectBox {
 	objectBox, err := objectbox.NewBuilder().Model(model.ObjectBoxModel()).Build()
@@ -27,17 +35,10 @@ func viewAll(c *fiber.Ctx) error {
 
 	posts, _ := box.GetAll()
 
-	p, err := json.Marshal(posts)
-
-	if err != nil {
-		panic(err)
+	P := map[string][]*model.Post{
+		"Posts": posts,
 	}
 
-	c.Response().BodyWriter().Write([]byte(p))
+	return c.Render("index", P)
 
-	return nil
-}
-
-func homeHandler(c *fiber.Ctx) error {
-	return c.Render("index", nil)
 }

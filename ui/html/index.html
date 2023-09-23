@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog-Post - Welcome !</title>
-
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
     <!-- linking the tailwind-css cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -18,15 +18,24 @@
             Hello world!
         </h1>
         
-        <button hx-get="/api/viewall" hx-target="#target" hx-trigger="click" hx-swap="innerHTML" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
              click me
         </button>
 
     </div>
 
     <div class="flex justify-center items-center flex-row bg-blue-500 h-48">
+            {{ range .Posts }}
+                {{ .Id }}
 
-        <p id="target"></p>
+                {{ .Title }}
+
+                {{ .Author }}
+
+                {{ .Description }}
+
+                {{ .DateCreated }}
+            {{ end }}
 
     </div>
         
