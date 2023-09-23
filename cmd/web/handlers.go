@@ -1,39 +1,35 @@
 package main
 
 import (
-	"fmt"
-	"time"
-
 	"github.com/2k4sm/blogPost/internals/model"
 	"github.com/gofiber/fiber/v2"
-	"github.com/objectbox/objectbox-go/objectbox"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
-type Post struct {
-	Id          uint64
-	Title       string
-	Author      string
-	Description string
-	DateCreated time.Time
-}
+func viewAll(c *fiber.Ctx) error {
 
-func initObjectBox() *objectbox.ObjectBox {
-	objectBox, err := objectbox.NewBuilder().Model(model.ObjectBoxModel()).Build()
+	db, err := gorm.Open(sqlite.Open("posts.db"), &gorm.Config{})
 
 	if err != nil {
-		panic(fmt.Sprintf("Error initialising Object Box: %v", err))
+		panic("failed to connect Database.")
 	}
+	db.AutoMigrate(&model.Post{})
+	db.Create(&model.Post{Title: "this is a title", Author: "sm", Description: "description"})
+	db.Create(&model.Post{Title: "this is a title2", Author: "sm2", Description: "description2"})
+	db.Create(&model.Post{Title: "this is a title3", Author: "sm3", Description: "description3"})
 
-	return objectBox
-}
+	var posts []*model.Post
+	rows, err := db.Model(&model.Post{}).Rows()
 
-func viewAll(c *fiber.Ctx) error {
-	ob := initObjectBox()
-	defer ob.Close()
+	if err != nil {
+		panic(err)
+	}
+	defer rows.Close()
 
-	box := model.BoxForPost(ob)
-
-	posts, _ := box.GetAll()
+	for rows.Next() {
+		db.ScanRows(rows, &posts)
+	}
 
 	P := map[string][]*model.Post{
 		"Posts": posts,
@@ -42,3 +38,7 @@ func viewAll(c *fiber.Ctx) error {
 	return c.Render("index", P)
 
 }
+
+// func createPost(c *fiber.Ctx) error {
+
+// }

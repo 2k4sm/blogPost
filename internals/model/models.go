@@ -1,13 +1,12 @@
 package model
 
-import "time"
-
-//go:generate go run github.com/objectbox/objectbox-go/cmd/objectbox-gogen
+import (
+	"gorm.io/gorm"
+)
 
 type Post struct {
-	Id          uint64
+	gorm.Model
 	Title       string
 	Author      string
 	Description string
-	DateCreated time.Time `objectbox:"date"`
 }
