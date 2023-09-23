@@ -24,17 +24,25 @@
 
     </div>
 
-    <div class="flex justify-center items-center flex-row bg-blue-500 h-48">
+    <div class="flex-1 items-center justify-center flex-col bg-blue-500">
             {{ range .Posts }}
-                {{ .Id }}
 
+            <div class="flex-1 items-center justify-center text-6xl m-2 p-2 text-yellow font-bold bg-blue-400 rounded-sm">
                 {{ .Title }}
+            </div>
+
+            <div class="flex-1 items-center justify-center text-4xl m-2 p-2 text-white bg-blue-400 rounded-sm ">
 
                 {{ .Author }}
 
+            </div>
+
+            <div class="flex-1 items-center justify-center text-2xl m-2 p-2 text-white bg-blue-400 rounded-sm">
+
                 {{ .Description }}
 
-                {{ .DateCreated }}
+            </div>
+
             {{ end }}
 
     </div>
