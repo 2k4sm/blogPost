@@ -34,6 +34,6 @@ func ViewAll(c *fiber.Ctx) error {
 
 }
 
-// func createPost(c *fiber.Ctx) error {
-
-// }
+func CreatePost(c *fiber.Ctx) error {
+	return c.SendString("hello")
+}
