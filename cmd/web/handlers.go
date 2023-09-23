@@ -14,10 +14,6 @@ func viewAll(c *fiber.Ctx) error {
 	if err != nil {
 		panic("failed to connect Database.")
 	}
-	db.AutoMigrate(&model.Post{})
-	db.Create(&model.Post{Title: "this is a title", Author: "sm", Description: "description"})
-	db.Create(&model.Post{Title: "this is a title2", Author: "sm2", Description: "description2"})
-	db.Create(&model.Post{Title: "this is a title3", Author: "sm3", Description: "description3"})
 
 	var posts []*model.Post
 	rows, err := db.Model(&model.Post{}).Rows()
