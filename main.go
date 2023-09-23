@@ -22,7 +22,8 @@ func main() {
 	//app.Static("/static", "../../ui/html")
 
 	app.Get("/", internals.ViewAll)
-	app.Post("/createpost", internals.CreatePost)
+	app.Get("/createpost", internals.CreatePost)
+	app.Post("/createpost", internals.ProcessForm)
 	app.Listen(":8000")
 
 }
