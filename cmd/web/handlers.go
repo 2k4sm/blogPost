@@ -37,3 +37,7 @@ func viewAll(c *fiber.Ctx) error {
 
 	return nil
 }
+
+func homeHandler(c *fiber.Ctx) error {
+	return c.Render("index", nil)
+}
