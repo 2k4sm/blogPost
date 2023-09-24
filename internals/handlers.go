@@ -17,8 +17,6 @@ func ViewAll(c *fiber.Ctx) error {
 	}
 	db.AutoMigrate(Post{})
 
-	//db.Create(&Post{Title: "md test", Author: "md author", Description: "### working with md\n # this is a big tag\n - point1\n - point2\n [link](https://www.google.com)"})
-
 	var posts []*Post
 	rows, err := db.Model(&Post{}).Rows()
 
@@ -40,7 +38,7 @@ func ViewAll(c *fiber.Ctx) error {
 }
 
 func CreatePost(c *fiber.Ctx) error {
-	return c.SendString("hello")
+	return c.Render("publish.html", nil)
 }
 
 func ProcessForm(c *fiber.Ctx) error {
@@ -51,13 +49,11 @@ func ProcessForm(c *fiber.Ctx) error {
 		panic("failed to connect Database.")
 	}
 
-	title := c.FormValue("title")
-	author := c.FormValue("author")
 	desc := c.FormValue("description")
-	post := &Post{Title: title, Author: author, Description: desc}
+	post := &Post{Description: desc}
 	db.Create(post)
 
 	fmt.Println("Form Processed Successfully.")
 
-	return c.RedirectToRoute("/", nil)
+	return c.RedirectBack("/")
 }

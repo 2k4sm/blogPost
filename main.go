@@ -19,7 +19,7 @@ func main() {
 		AppName:       "blogPost v0.0.1",
 	})
 
-	//app.Static("/static", "../../ui/html")
+	app.Static("/", "./ui/assets")
 
 	app.Get("/", internals.ViewAll)
 	app.Get("/createpost", internals.CreatePost)

@@ -6,7 +6,5 @@ import (
 
 type Post struct {
 	gorm.Model
-	Title       string
-	Author      string
 	Description string
 }
