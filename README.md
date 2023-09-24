@@ -1,5 +1,5 @@
 # blogPost
-A simple Blogging Platfrom.
+A simple Blogging Platfrom. Blog your heart out using the power of Markdown.
 
 ## Technologies used
 - [goFiber](https://gofiber.io/)
@@ -38,11 +38,11 @@ Start the server at localhost:8000 using:
 
 ## Contributing
 
-If you would like to contribute to the blogPost, please fork this repository and create a pull request with your changes.
+If you would like to contribute to `blogPost` , please fork this repository and create a pull request with your changes.
 
 ## License
 
-This blogging platform is licensed under the MIT License.
+`blogPost` is licensed under the MIT License.
 
 ## Credits
 
