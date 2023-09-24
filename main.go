@@ -21,7 +21,9 @@ func main() {
 
 	app.Static("/", "./ui/assets")
 
-	app.Get("/", internals.ViewAll)
+
+	app.Get("/",internals.RenderHome)
+	app.Get("/api/views", internals.ViewAll)
 	app.Get("/createpost", internals.CreatePost)
 	app.Post("/createpost", internals.ProcessForm)
 	app.Listen(":8000")

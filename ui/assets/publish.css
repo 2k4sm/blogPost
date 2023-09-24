@@ -36,6 +36,17 @@ body{
     margin: 1rem;
     width: 80%;
     font-family: 'Exo 2', sans-serif;
+    padding: 2rem;
+}
+
+.main-container > textarea{
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 1rem;
+    width: 80%;
+    font-family: 'Exo 2', sans-serif;
+    padding: 2rem;
+
 }
 .live-preview-span{
     display: block;
@@ -63,6 +74,7 @@ body{
     overflow-y: auto;
     height: 20vh;
     width: 75vw;
+
 }
 
 #markdown-input::placeholder{
