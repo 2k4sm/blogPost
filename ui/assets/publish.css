@@ -3,9 +3,9 @@ body{
     margin: auto;
     background-image: linear-gradient(to top right,rgb(0, 0, 0),rgb(33, 33, 52));
     height: 100vh;
+    position: relative;
 }
 .main{
-    position: relative;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-top-right-radius: 2rem;
     border-top-left-radius: 2rem;
@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 90%;
+    height: 80%;
     overflow:-x hidden;
     overflow-y: auto;
     margin: 1rem;
@@ -61,6 +61,8 @@ body{
     border-radius: 1rem;
     overflow:-x hidden;
     overflow-y: auto;
+    height: 20vh;
+    width: 75vw;
 }
 
 #markdown-input::placeholder{

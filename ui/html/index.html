@@ -11,41 +11,78 @@
 </head>
 
 <body>
-    <div class="position: relative;">
-
-            <nav class="position: absolute; flex-row bg-gray-200 h-48">
-
-                
-
-                <ul>
-                    <li><a class="text-decoration: none;" href="/home"></a></li>
-                    <li><a class="text-decoration: none;"href="/about"></a></li>
-                </ul>
-
-            </nav>
-
+    
+    <div>
+        <div class="bg-white pt-4 pr-8 pb-4 pl-8">
+      <nav class="w-full">
+        <div class="flex w-full justify-between max-w-screen-2xl md:flex-row mt-auto mr-auto mb-auto ml-auto">
+          <div class="flex flex-row bg-white justify-between items-center mt-2 mb-2 md:m-0 hidden md:flex">
+            <a href="/" class="text-white text-center mr-6 font-medium text-base hover:scale-110 transition ease-in-out
+                duration-500 bg-indigo-600 p-3 rounded-xl shadow-lg">Home</a>
+            <a href="/about" class="text-white text-center mr-6 font-medium text-base hover:scale-110 transition ease-in-out duration-500 bg-indigo-600 text-white rounded-xl p-3 shadow-lg">About</a>
+          </div>
+          <div class="bg-white flex-row flex items-center justify-center order-first md:order-none">
+            <img src="../assets/BLOG.png"
+                class="hover:scale-110 transition: ease-in-out duration-500 p--2 cursor-pointer w-16 md:w-32"/>
+          </div>
+          <div class="flex justify-center items-center md:justify-start hidden md:flex">
+            <button href="/createpost" class="p-5 hover:scale-110 transition ease-in-out duration-500 shadow-lg h-9 text-white bg-indigo-600
+                hover:bg-blue-900 hover:border-indigo-600 border-2 flex items-center justify-center text-center
+                border-indigo-600 rounded-lg text-lg font-normal mr-auto">+ New Blog</button>
+          </div>
+          <div class="md:hidden flex items-center">
+            <div class="outline-none mobile-menu-button">
+              <svg id="Windframe_-ndPvXYYR8" fill="none" strokelinecap="round" stroke-linejoin="round" strokewidth="2"
+                  viewbox="0 0 12 12" stroke="currentColor" class="w-6 h-6 text-gray-500 hover:text-green-500"><path
+                  id="Windframe_VW4fG47YjU" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </div>
+          </div>
         </div>
+        <div class="hidden md:hidden mobile-menu">
+          <div>
+            <div class="flex flex-col">
+              <a href="/" class="rounded-xl bg-indigo-600 text-white text-center mt-2 font-medium text-base active:bg-indigo-500 scale-110 transition:ease-in-out duration-500">Home</a>
+              <a href="/about" class="rounded-xl bg-indigo-600 text-white text-center mt-2 font-medium text-baseactive:bg-indigo-500 scale-110 transition:ease-in-out duration-500">About</a>
+              <button href="/createpost" class="h-9  text-white bg-indigo-600 hover:bg-indigo-500 active:border-indigo-600 border-2 flex
+                  items-center justify-center text-center border-indigo-600 rounded-lg text-lg font-normal mt-2 mr-auto
+                  ml-auto">+ Create a new Blog</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div> 
+    </div>
+    <script>
+        const btn = document.querySelector(".mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        });
+    </script>
+    
+    </body>
+  
 
-        <div class="flex-1 items-center justify-center flex-col bg-blue-500">
+        <div class="flex-1 items-center justify-center flex-col bg-blue-500 rounded-xl m-2 p-2">
                 {{ range .Posts }}
 
-                <div class="flex-1 items-center justify-center text-6xl m-2 p-2 text-yellow font-bold bg-blue-400 rounded-sm">
-                    {{ .Title }}
-                </div>
+            <div class="flex-1 items-center justify-center text-6xl m-2 p-2 text-yellow font-bold bg-blue-400 rounded-sm">
+                {{ .Title }}
+            </div>
 
-                <div class="flex-1 items-center justify-center text-4xl m-2 p-2 text-white bg-blue-400 rounded-sm ">
+            <div class="flex-1 items-center justify-center text-4xl m-2 p-2 text-white bg-blue-400 rounded-sm ">
 
-                    {{ .Author }}
+                {{ .Author }}
 
-                </div>
+            </div>
 
-                <div class="flex-1 items-center justify-center text-2xl m-2 p-2 text-white bg-blue-400 rounded-sm">
+            <div class="flex-1 items-center justify-center text-2xl m-2 p-2 text-white bg-blue-400 rounded-sm">
 
-                    {{ .Description }}
+                {{ .Description }}
 
-                </div>
+            </div>
 
-                {{ end }}
+            {{ end }}
 
         </div>
 
