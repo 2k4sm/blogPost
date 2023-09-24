@@ -11,39 +11,43 @@
 </head>
 
 <body>
-    <div class="flex justify-center items-center flex-row bg-gray-200 h-48">
+    <div class="position: relative;">
 
+            <nav class="position: absolute; flex-row bg-gray-200 h-48">
 
-        <h1 class="text-3xl font-bold inline-block">
-            Hello world!
-        </h1>
-        
-        <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-             click me
-        </button>
+                
 
-    </div>
+                <ul>
+                    <li><a class="text-decoration: none;" href="/home"></a></li>
+                    <li><a class="text-decoration: none;"href="/about"></a></li>
+                </ul>
 
-    <div class="flex-1 items-center justify-center flex-col bg-blue-500">
-            {{ range .Posts }}
+            </nav>
 
-            <div class="flex-1 items-center justify-center text-6xl m-2 p-2 text-yellow font-bold bg-blue-400 rounded-sm">
-                {{ .Title }}
-            </div>
+        </div>
 
-            <div class="flex-1 items-center justify-center text-4xl m-2 p-2 text-white bg-blue-400 rounded-sm ">
+        <div class="flex-1 items-center justify-center flex-col bg-blue-500">
+                {{ range .Posts }}
 
-                {{ .Author }}
+                <div class="flex-1 items-center justify-center text-6xl m-2 p-2 text-yellow font-bold bg-blue-400 rounded-sm">
+                    {{ .Title }}
+                </div>
 
-            </div>
+                <div class="flex-1 items-center justify-center text-4xl m-2 p-2 text-white bg-blue-400 rounded-sm ">
 
-            <div class="flex-1 items-center justify-center text-2xl m-2 p-2 text-white bg-blue-400 rounded-sm">
+                    {{ .Author }}
 
-                {{ .Description }}
+                </div>
 
-            </div>
+                <div class="flex-1 items-center justify-center text-2xl m-2 p-2 text-white bg-blue-400 rounded-sm">
 
-            {{ end }}
+                    {{ .Description }}
+
+                </div>
+
+                {{ end }}
+
+        </div>
 
     </div>
         
