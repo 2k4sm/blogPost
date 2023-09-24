@@ -64,7 +64,7 @@ body{
     color: white;
     max-height: 40%;
     border-radius: 1rem;
-    font-family: cursive ;
+    font-family: monospace ;
     position: relative;
 }
 #markdown-input{
