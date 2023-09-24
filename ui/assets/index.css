@@ -97,11 +97,18 @@ nav{
     text-decoration: none;
     border: none;
     border-radius: 1rem;
-    background-color: rgb(61, 168, 255);
+    background-color: rgb(16, 87, 180);
     color: white;
+    transition: 300ms ease-in-out;
+    box-shadow: 0 0 3rem 0.2rem black;
 }
 .create-post-btn a{
     -webkit-text-fill-color: white;
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.create-post-btn:hover{
+    cursor: pointer;
+    background-color: rgb(61, 168, 255);
+    transform: scale(1.1);
 }
