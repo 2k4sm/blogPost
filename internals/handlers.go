@@ -8,6 +8,10 @@ import (
 	"gorm.io/gorm"
 )
 
+func RenderHome(c *fiber.Ctx) error {
+	return c.Render("index", nil)
+}
+
 func ViewAll(c *fiber.Ctx) error {
 
 	db, err := gorm.Open(sqlite.Open("posts.db"), &gorm.Config{})
@@ -33,7 +37,7 @@ func ViewAll(c *fiber.Ctx) error {
 		"Posts": posts,
 	}
 
-	return c.Render("index", P)
+	return c.JSON(P)
 
 }
 
@@ -55,5 +59,5 @@ func ProcessForm(c *fiber.Ctx) error {
 
 	fmt.Println("Form Processed Successfully.")
 
-	return c.RedirectToRoute("/", nil)
+	return c.Redirect("/")
 }
