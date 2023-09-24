@@ -35,7 +35,6 @@ body{
     overflow-y: auto;
     margin: 1rem;
     width: 80%;
-    padding: 2rem;
     font-family: 'Exo 2', sans-serif;
 }
 .live-preview-span{
