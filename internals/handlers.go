@@ -13,7 +13,7 @@ func RenderHome(c *fiber.Ctx) error {
 }
 
 func ViewAll(c *fiber.Ctx) error {
-
+	c.Response().Header.Set("Content-Type", "application/json")
 	db, err := gorm.Open(sqlite.Open("posts.db"), &gorm.Config{})
 
 	if err != nil {
