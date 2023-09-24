@@ -78,9 +78,7 @@ body{
 }
 
 #markdown-input::placeholder{
-
     color: black;
-
 }
 .submit{
     position: absolute;

@@ -23,6 +23,7 @@ func main() {
 
 	app.Get("/", internals.RenderHome)
 	app.Get("/api/views", internals.ViewAll)
+	app.Get("/about", internals.RenderAbout)
 	app.Get("/createpost", internals.CreatePost)
 	app.Post("/createpost", internals.ProcessForm)
 	app.Listen(":8000")

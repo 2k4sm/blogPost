@@ -1,0 +1,9 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top right,rgb(0, 0, 0),rgb(22, 46, 56));
+    color: white;
+    font-family: cursive, monospace;
+}

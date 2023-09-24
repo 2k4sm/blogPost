@@ -61,3 +61,7 @@ func ProcessForm(c *fiber.Ctx) error {
 
 	return c.Redirect("/")
 }
+
+func RenderAbout(c *fiber.Ctx) error {
+	return c.Render("about", nil)
+}

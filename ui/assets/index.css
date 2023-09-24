@@ -1,0 +1,107 @@
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(to bottom right, black, rgb(23, 46, 61));
+    position: relative;
+}
+
+
+
+.preview-area{
+    overflow:-x hidden;
+    overflow-y: auto;
+    padding: 2rem;
+    width: 80%;
+    background-color: rgb(43, 54, 63);
+    color: white;
+    max-height: 100%;
+    border-radius: 1rem;
+    font-family: monospace ;
+    margin: 2rem;
+}
+
+.navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -0.25rem -0.25rem 0.5rem brgba(139, 139, 139, 0.736);
+    height: 10vh;
+    background-image: linear-gradient(to top right,rgb(0, 0, 0),rgb(22, 46, 56));
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem 0.18rem rgb(23, 89, 117);
+
+    /* background-color: blue; */
+}
+
+nav{
+    position: absolute;
+    text-emphasis: none;
+    list-style-type: none;
+    right: 0;
+}
+.nav-btn{
+    background-color: white;
+    border: none;
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 2rem;
+    box-shadow: 0rem 0rem 1rem 0.25rem black;
+    background-color: rgb(23, 89, 117);
+    transition: 300ms ease-in-out;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
+}
+.nav-btn:hover{
+    cursor: pointer;
+    background-color: rgb(61, 168, 255);
+    box-shadow: 0.5rem 0.5rem 3rem  0.25rem black;
+}
+.nav-btn a{
+    -webkit-text-fill-color: black;
+
+    text-decoration: none;
+}
+.navbar > .logo{
+    border-radius: 1rem;
+    border: none;
+    position: absolute;
+    height: 8vh;
+    left: 0;
+    margin: 0.5rem;
+}
+
+.navbar > .logo:hover{
+    cursor: pointer;
+}
+
+.create-post{
+    position: fixed;
+    right: 0.5vw;
+    bottom: 2.5vh;
+}
+
+.create-post-btn{
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgb(61, 168, 255);
+    color: white;
+}
+.create-post-btn a{
+    -webkit-text-fill-color: white;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
