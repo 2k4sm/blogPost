@@ -38,7 +38,7 @@ func ViewAll(c *fiber.Ctx) error {
 }
 
 func CreatePost(c *fiber.Ctx) error {
-	return c.Render("publish.html", nil)
+	return c.Render("publish", nil)
 }
 
 func ProcessForm(c *fiber.Ctx) error {
@@ -55,5 +55,5 @@ func ProcessForm(c *fiber.Ctx) error {
 
 	fmt.Println("Form Processed Successfully.")
 
-	return c.RedirectBack("/")
+	return c.RedirectToRoute("/", nil)
 }
