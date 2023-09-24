@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-          const img = mutation.target.querySelectorAll('img');
-          if (img) {
-              img.style.height = '10vh';
+          const images = mutation.target.querySelectorAll('img');
+          images.forEach(function(img) {
+              img.style.height = '20vh';
               img.style.width = 'auto';
-          }
+          });
       });
   });
 
