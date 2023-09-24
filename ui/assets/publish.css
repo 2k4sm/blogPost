@@ -2,10 +2,10 @@ body{
     
     margin: auto;
     background-image: linear-gradient(to top right,rgb(0, 0, 0),rgb(33, 33, 52));
-    height: 100vh;
-    position: relative;
+    height: 100vh;;
 }
 .main{
+    position: relative;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-top-right-radius: 2rem;
     border-top-left-radius: 2rem;
@@ -14,13 +14,14 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 80%;
+    height: 90%;
     overflow:-x hidden;
     overflow-y: auto;
     margin: 1rem;
     box-shadow: -0.5rem -0.5rem 0.5rem rgb(55, 55, 82);
 }
 .main-container{
+    
     overflow:-x hidden;
     overflow-y: auto;
     display: flex;
@@ -71,6 +72,7 @@ body{
 
 }
 .submit{
+    position: absolute;
     border: none;
     border-radius: 2rem;
     text-decoration: none;
@@ -85,6 +87,7 @@ body{
     bottom: 0;
     right: 0;
     transition: 500ms;
+    z-index: 2;
 }
 
 .submit:hover,
@@ -96,10 +99,4 @@ body{
 .submit:active{
     background-color: rgba(145, 145, 242, 0.815);
     transform:  scale(1.12);
-}
-.char-counter{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: rgb(150, 149, 149);
 }
